@@ -1,0 +1,33 @@
+<div class="input-parent clearfix">
+  <h3>Проекты</h3>
+  <div class="search-block">
+    Поиск: <input ng-model="query">
+  </div>
+  <div class="sort-block">
+    Отсортировать:
+    <select ng-model="orderProp">
+      <option value="-id">Последние</option>
+      <option value="id">С начала</option>
+    </select>
+  </div>
+</div>
+
+<ul class="projects">
+  <li ng-repeat="project in projects | filter: query | orderBy:orderProp" class="project-preview clearfix">
+
+    <div class="content-left-column">
+      <a href="#/projects/{{project.id}}">
+        <img ng-src="{{project.imageUrl}}" width="280" height="187" alt="Photo">
+      </a>
+    </div>
+
+    <div class="content-right-column">
+      <h2 class="project-title">
+        <a href="#/projects/{{project.id}}" class="">{{project.title}}</a>
+      </h2>
+      <p><date>{{project.date}}</date></p>
+      <p>{{project.info}}</p>
+    </div>
+
+  </li>
+</ul>

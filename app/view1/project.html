@@ -1,0 +1,19 @@
+<div class="project">
+
+  <h1>Проект: {{project.title}}</h1>
+
+  <p><date>{{project.date}}</date></p>
+
+  <div>
+    <img ng-src="{{mainImageUrl}}" width="560" height="373" alt="Photo">
+  </div>
+
+  <ul class="project-photos">
+    <li ng-repeat="img in project.images">
+      <img ng-src="{{img}}" ng-click="setImage(img)" width="180" height="120">
+    </li>
+  </ul>
+
+  <p>{{project.description}}</p>
+
+</div>
